@@ -1,16 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
 
   const sections = [
     'hero',
@@ -23,8 +18,6 @@ export default function Home() {
     let scrollTimeout: NodeJS.Timeout;
     
     const handleScroll = () => {
-      setIsScrolling(true);
-      
       if (containerRef.current) {
         const scrollTop = window.scrollY;
         const windowHeight = window.innerHeight;
@@ -34,7 +27,7 @@ export default function Home() {
       
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
+        // Scroll handling completed
       }, 150);
     };
 
@@ -43,7 +36,7 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [sections.length]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -253,7 +246,7 @@ export default function Home() {
             Have questions or ideas?
           </h2>
           <p className="text-2xl text-gray-400 mb-12">
-            Let's connect.
+            Let&apos;s connect.
           </p>
           
           <motion.a
