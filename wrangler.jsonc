@@ -13,7 +13,6 @@
   },
   "routes": [
     { "pattern": "colight.app/*", "zone_name": "colight.app" },
-    { "pattern": "www.colight.app/*", "zone_name": "colight.app" },
     { "pattern": "*.colight.app/*", "zone_name": "colight.app" }
   ],
   "observability": {
