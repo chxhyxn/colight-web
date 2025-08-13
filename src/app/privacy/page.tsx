@@ -10,7 +10,7 @@ export default function PrivacyPage() {
         <section className="mt-10 space-y-8 text-neutral-300 leading-relaxed">
           <div>
             <h2 className="text-xl md:text-2xl font-semibold text-white">1. 수집하는 개인정보</h2>
-            <p className="mt-3">CoLight는 서비스 제공에 필요한 최소한의 정보만 수집합니다. 계정 생성 시 이메일 주소가 수집될 수 있으며, 선택적으로 기기 정보(모델, OS 버전)가 안정성 개선을 위해 수집될 수 있습니다.</p>
+            <p className="mt-3">colight 서비스 제공에 필요한 최소한의 정보만 수집합니다. 계정 생성 시 이메일 주소가 수집될 수 있으며, 선택적으로 기기 정보(모델, OS 버전)가 안정성 개선을 위해 수집될 수 있습니다.</p>
           </div>
 
           <div>
@@ -35,12 +35,12 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-xl md:text-2xl font-semibold text-white">6. 쿠키 및 추적 기술</h2>
-            <p className="mt-3">CoLight 웹은 핵심 기능 제공을 위한 필수 쿠키만을 사용하며, 광고 목적의 타사 추적 쿠키는 사용하지 않습니다.</p>
+            <p className="mt-3">colight 웹은 핵심 기능 제공을 위한 필수 쿠키만을 사용하며, 광고 목적의 타사 추적 쿠키는 사용하지 않습니다.</p>
           </div>
         </section>
 
         <div className="mt-16 text-sm text-neutral-500">
-          © {new Date().getFullYear()} CoLight. All rights reserved.
+          © {new Date().getFullYear()} colight. All rights reserved.
         </div>
       </div>
     </main>

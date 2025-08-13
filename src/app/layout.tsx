@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+  title: "colight",
   description: "iOS 전용 프로 카메라 앱. 쉽지만 강력한 촬영과 커스텀 필터 메이커로 당신의 톤을 완성하세요.",
   keywords: ["iOS", "카메라", "프로", "필터", "사진", "CoLight", "iPhone"],
   authors: [{ name: "Sean Cho" }],
   creator: "Sean Cho",
-  publisher: "CoLight",
+  publisher: "colight",
   formatDetection: {
     email: false,
     address: false,
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "CoLight",
+    title: "colight",
   },
   openGraph: {
-    title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+    title: "colight",
     description: "iOS 전용 프로 카메라 앱",
     type: "website",
     locale: "ko_KR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+    title: "colight",
     description: "iOS 전용 프로 카메라 앱",
   },
 };
