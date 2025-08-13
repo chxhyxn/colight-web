@@ -12,6 +12,7 @@
     "directory": ".open-next/assets"
   },
   "routes": [
+    { "pattern": "colight.app", "zone_name": "colight.app" },
     { "pattern": "colight.app/*", "zone_name": "colight.app" },
     { "pattern": "*.colight.app/*", "zone_name": "colight.app" }
   ],
