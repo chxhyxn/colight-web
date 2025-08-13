@@ -1,5 +1,6 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -178,7 +179,7 @@ export default function Home() {
       >
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
-            Have questions or ideas?<br />Let's connect.
+            Have questions or ideas?<br />Let&apos;s connect.
           </h2>
           
           <a 
