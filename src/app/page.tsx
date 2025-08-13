@@ -20,9 +20,9 @@ export default function Home() {
     <div className="bg-black text-white font-sf-pro min-h-screen">
       <header className="fixed inset-x-0 top-0 z-50 glass" role="banner">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <a href="#hero" className="inline-flex items-center gap-2 min-h-[44px]" aria-label="CoLight 홈으로 이동">
-            <Image src="/colight.svg" alt="CoLight" width={22} height={22} priority className="opacity-90" />
-            <span className="text-[15px] tracking-tight">CoLight</span>
+          <a href="#hero" className="inline-flex items-center gap-2 min-h-[44px]" aria-label="colight 홈으로 이동">
+            <Image src="/colight.svg" alt="colight" width={22} height={22} priority className="opacity-90" />
+            <span className="text-[15px] tracking-tight">colight</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-300" aria-label="주요">
             <a href="#features" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">기능</a>
@@ -146,7 +146,7 @@ export default function Home() {
         </section>
 
         <footer className="py-16 text-center text-sm text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} CoLight. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} colight. All rights reserved.</p>
         </footer>
       </main>
     </div>
