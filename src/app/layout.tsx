@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CoLight - Create. Share. Light.",
-  description: "iOS 전용 전문 카메라 앱. 쉽지만 전문적인 사진 촬영과 커스텀 필터 제작을 경험하세요.",
-  keywords: ["iOS", "카메라", "필터", "사진", "CoLight", "iPhone"],
+  title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+  description: "iOS 전용 프로 카메라 앱. 쉽지만 강력한 촬영과 커스텀 필터 메이커로 당신의 톤을 완성하세요.",
+  keywords: ["iOS", "카메라", "프로", "필터", "사진", "CoLight", "iPhone"],
   authors: [{ name: "Sean Cho" }],
   creator: "Sean Cho",
   publisher: "CoLight",
@@ -19,15 +19,15 @@ export const metadata: Metadata = {
     title: "CoLight",
   },
   openGraph: {
-    title: "CoLight - Create. Share. Light.",
-    description: "iOS 전용 전문 카메라 앱",
+    title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+    description: "iOS 전용 프로 카메라 앱",
     type: "website",
     locale: "ko_KR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CoLight - Create. Share. Light.",
-    description: "iOS 전용 전문 카메라 앱",
+    title: "CoLight - 찍고, 공유하고, 더 빛나게.",
+    description: "iOS 전용 프로 카메라 앱",
   },
 };
 
@@ -51,6 +51,12 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
       </head>
       <body className="font-sf-pro antialiased">
+        <a
+          href="#main"
+          className="fixed left-4 -top-10 z-[100] rounded-md bg-white px-3 py-2 text-black shadow transition-all focus:top-4 focus:outline-none"
+        >
+          본문으로 건너뛰기
+        </a>
         {children}
       </body>
     </html>
