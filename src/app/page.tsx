@@ -26,10 +26,10 @@ export default function Home() {
     <div className="bg-black text-white font-sf-pro min-h-screen overflow-x-hidden">
       <header className="fixed inset-x-0 top-0 z-50 glass" role="banner">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <a href="/" className="inline-flex items-center gap-0.5 min-h-[44px]" aria-label="colight 홈으로 이동">
+          <Link href="/" className="inline-flex items-center gap-0.5 min-h-[44px]" aria-label="colight 홈으로 이동">
             <Image src="/colight.svg" alt="colight" width={16} height={16} priority className="opacity-80" />
             <span className="text-[16px] tracking-tight">colight</span>
-          </a>
+          </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-300" aria-label="주요">
             <a href="#features" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">기능</a>
             <a href="#support" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">지원</a>
@@ -200,7 +200,7 @@ export default function Home() {
               개인정보 처리방침
             </motion.h3>
             <div className="mt-8 flex justify-center">
-              <a href="/privacy" className="px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors text-sm">전문 보기</a>
+              <Link href="/privacy" className="px-5 py-2 rounded-full border border-white/20 hover:bg-white hover:text-black transition-colors text-sm">전문 보기</Link>
             </div>
           </div>
         </section>
