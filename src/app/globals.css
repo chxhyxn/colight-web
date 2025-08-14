@@ -1,11 +1,61 @@
 @import "tailwindcss";
 
 :root {
+  /* Light theme defaults (auto mode will be overridden by prefers-color-scheme) */
+  --color-bg: #f5f5f7;
+  --color-fg: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --glass-rgb: 255, 255, 255;
+  --surface-1: rgba(255, 255, 255, 0.7);
+  --hero-overlay: rgba(0, 0, 0, 0.06);
+  --vignette-1: rgba(0, 0, 0, 0.06);
+  --vignette-2: rgba(0, 0, 0, 0.04);
+  --vignette-3: rgba(0, 0, 0, 0.03);
+  --radius-xl: 1.25rem;
+}
+
+/* Auto mode follows system preference by default */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #000000;
+    --color-fg: #e5e5e5;
+    --color-muted: #9ca3af;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --glass-rgb: 0, 0, 0;
+    --surface-1: rgba(38, 38, 38, 0.6);
+    --hero-overlay: rgba(0, 0, 0, 0.5);
+    --vignette-1: rgba(255, 255, 255, 0.06);
+    --vignette-2: rgba(255, 255, 255, 0.04);
+    --vignette-3: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* Explicit overrides when user selects a theme */
+[data-theme="light"] {
+  --color-bg: #f5f5f7;
+  --color-fg: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --glass-rgb: 255, 255, 255;
+  --surface-1: rgba(255, 255, 255, 0.7);
+  --hero-overlay: rgba(0, 0, 0, 0.06);
+  --vignette-1: rgba(0, 0, 0, 0.06);
+  --vignette-2: rgba(0, 0, 0, 0.04);
+  --vignette-3: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] {
   --color-bg: #000000;
   --color-fg: #e5e5e5;
   --color-muted: #9ca3af;
   --color-border: rgba(255, 255, 255, 0.08);
-  --radius-xl: 1.25rem;
+  --glass-rgb: 0, 0, 0;
+  --surface-1: rgba(38, 38, 38, 0.6);
+  --hero-overlay: rgba(0, 0, 0, 0.5);
+  --vignette-1: rgba(255, 255, 255, 0.06);
+  --vignette-2: rgba(255, 255, 255, 0.04);
+  --vignette-3: rgba(255, 255, 255, 0.03);
 }
 
 @theme inline {
@@ -28,6 +78,7 @@ body {
   text-rendering: optimizeLegibility;
   margin: 0;
   -webkit-tap-highlight-color: transparent;
+  color-scheme: light dark;
 }
 
 ::selection {
@@ -37,9 +88,10 @@ body {
 
 /* Header glass */
 .glass {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(var(--glass-rgb), 0.6);
   backdrop-filter: saturate(180%) blur(16px);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Safe-area for iOS notch */
@@ -56,6 +108,24 @@ header[role="banner"] {
   display: none;
 }
 
+/* Semantic color utilities */
+.text-muted {
+  color: var(--color-muted);
+}
+
+.border-default {
+  border-color: var(--color-border);
+}
+
+.surface-1 {
+  background: var(--surface-1);
+}
+
+/* Hero overlay uses theme variable */
+.hero-overlay {
+  background: var(--hero-overlay);
+}
+
 /* Edge fade for horizontal scrollers */
 .scroll-gradient {
   -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
@@ -69,7 +139,7 @@ header[role="banner"] {
 
 /* Soft card */
 .card-soft {
-  background: rgba(38, 38, 38, 0.6);
+  background: var(--surface-1);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
 }
@@ -79,9 +149,9 @@ header[role="banner"] {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(1200px 600px at 50% 20%, rgba(255,255,255,0.06), rgba(0,0,0,0) 60%),
-              radial-gradient(900px 500px at 80% 0%, rgba(255,255,255,0.04), rgba(0,0,0,0) 55%),
-              radial-gradient(1600px 800px at 50% 100%, rgba(255,255,255,0.03), rgba(0,0,0,0) 60%);
+  background: radial-gradient(1200px 600px at 50% 20%, var(--vignette-1), rgba(0,0,0,0) 60%),
+              radial-gradient(900px 500px at 80% 0%, var(--vignette-2), rgba(0,0,0,0) 55%),
+              radial-gradient(1600px 800px at 50% 100%, var(--vignette-3), rgba(0,0,0,0) 60%);
 }
 
 /* Anchor scroll offset for fixed header */

@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "colight",
   description: "iOS 전용 프로 카메라 앱. 쉽지만 강력한 촬영과 커스텀 필터 메이커로 당신의 톤을 완성하세요.",
-  keywords: ["iOS", "카메라", "프로", "필터", "사진", "CoLight", "iPhone"],
+  keywords: ["iOS", "카메라", "프로", "필터", "사진", "colight", "iPhone"],
   authors: [{ name: "Sean Cho" }],
   creator: "Sean Cho",
   publisher: "colight",
@@ -45,12 +45,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="scroll-smooth">
+    <html lang="ko" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.cdnfonts.com" />
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
       </head>
-      <body className="font-sf-pro antialiased">
+      <body className="font-sf-pro antialiased" suppressHydrationWarning>
+        <script
+          id="theme-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var theme = stored || 'auto';
+                  var root = document.documentElement;
+                  if (theme === 'light' || theme === 'dark') {
+                    root.setAttribute('data-theme', theme);
+                  } else {
+                    root.removeAttribute('data-theme');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <a
           href="#main"
           className="fixed left-4 -top-10 z-[100] rounded-md bg-white px-3 py-2 text-black shadow transition-all focus:top-4 focus:outline-none"
