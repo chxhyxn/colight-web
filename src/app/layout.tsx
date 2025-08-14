@@ -45,31 +45,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="ko" className="scroll-smooth" data-theme="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.cdnfonts.com" />
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
       </head>
       <body className="font-sf-pro antialiased" suppressHydrationWarning>
-        <script
-          id="theme-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(){
-                try {
-                  var stored = localStorage.getItem('theme');
-                  var theme = stored || 'auto';
-                  var root = document.documentElement;
-                  if (theme === 'light' || theme === 'dark') {
-                    root.setAttribute('data-theme', theme);
-                  } else {
-                    root.removeAttribute('data-theme');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
         <a
           href="#main"
           className="fixed left-4 -top-10 z-[100] rounded-md bg-white px-3 py-2 text-black shadow transition-all focus:top-4 focus:outline-none"
