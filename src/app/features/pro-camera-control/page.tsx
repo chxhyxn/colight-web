@@ -4,7 +4,7 @@ import ExampleGallery from '../_components/ExampleGallery';
 
 export default function Page() {
   return (
-    <div className="pt-16">
+    <div>
       <section className="relative h-[42svh] md:h-[48vh] overflow-hidden">
         <Image src="/colight_background.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-black/50" />

@@ -15,8 +15,8 @@ export default function Header() {
           <span className="text-[16px] tracking-tight">colight</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-300" aria-label="주요">
-          <a href="/#features" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">기능</a>
-          <a href="/#support" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">지원</a>
+          <Link href="/#features" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">기능</Link>
+          <Link href="/#support" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">지원</Link>
           <Link href="/privacy" className="hover:text-white transition-colors min-h-[44px] inline-flex items-center">개인정보 처리방침</Link>
         </nav>
         <button
@@ -40,8 +40,8 @@ export default function Header() {
         {mobileNavOpen && (
           <div id="mobile-nav" className="md:hidden absolute inset-x-0 top-full bg-black/90 border-b border-white/10">
             <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col gap-2 text-sm">
-              <a href="/#features" className="inline-flex items-center min-h-[44px] text-neutral-200 hover:text-white" onClick={() => setMobileNavOpen(false)}>기능</a>
-              <a href="/#support" className="inline-flex items-center min-h-[44px] text-neutral-200 hover:text-white" onClick={() => setMobileNavOpen(false)}>지원</a>
+              <Link href="/#features" className="inline-flex items-center min-h-[44px] text-neutral-200 hover:text-white" onClick={() => setMobileNavOpen(false)}>기능</Link>
+              <Link href="/#support" className="inline-flex items-center min-h-[44px] text-neutral-200 hover:text-white" onClick={() => setMobileNavOpen(false)}>지원</Link>
               <Link href="/privacy" className="inline-flex items-center min-h-[44px] text-neutral-200 hover:text-white" onClick={() => setMobileNavOpen(false)}>개인정보 처리방침</Link>
             </div>
           </div>
@@ -50,3 +50,4 @@ export default function Header() {
     </header>
   );
 }
+
