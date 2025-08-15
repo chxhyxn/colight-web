@@ -2,7 +2,7 @@
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <div className="pt-16">
       <div className="max-w-3xl mx-auto px-6 py-28">
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">개인정보 처리방침</h1>
         <p className="mt-3 text-sm text-neutral-400">최종 업데이트: 2025-01-01</p>
@@ -39,11 +39,8 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        <div className="mt-16 text-sm text-neutral-500">
-          © {new Date().getFullYear()} colight. All rights reserved.
-        </div>
       </div>
-    </main>
+    </div>
   );
 }
 

@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "colight",
@@ -50,14 +52,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.cdnfonts.com" />
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display" />
       </head>
-      <body className="font-sf-pro antialiased" suppressHydrationWarning>
+      <body className="font-sf-pro antialiased bg-black text-white" suppressHydrationWarning>
         <a
           href="#main"
           className="fixed left-4 -top-10 z-[100] rounded-md bg-white px-3 py-2 text-black shadow transition-all focus:top-4 focus:outline-none"
         >
           본문으로 건너뛰기
         </a>
-        {children}
+        <Header />
+        <main id="main" className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
