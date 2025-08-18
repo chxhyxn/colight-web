@@ -28,7 +28,16 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-
+            className="object-cover object-center z-0"
+          />
+          <div className="hero-vignette" />
+          <div className="absolute inset-0 z-[1] bg-black/50 pointer-events-none" />
+          <div className="relative z-10 text-center px-6">
+            <motion.h1
+              initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8 }}
+              className="text-[44px] md:text-[72px] leading-[1.04] font-semibold tracking-[-0.02em]"
             >
               colight
             </motion.h1>
