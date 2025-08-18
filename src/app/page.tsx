@@ -10,6 +10,7 @@ export default function Home() {
   const router = useRouter();
 
   const featuresItems = [
+    { title: '프로 카메라 컨트롤', desc: '노출·화이트밸런스·포커스를 직관적으로 조절.', href: '/features/pro-camera-control' },
     { title: '필터 메이커', desc: '나만의 톤을 레시피로 저장하고 공유.', href: '/features/filter-maker' },
     { title: '라이브 프리뷰', desc: '결과를 그대로 미리 보기.', href: '/features/live-preview' },
     { title: 'RAW 촬영 지원', desc: '풍부한 정보로 후반 보정 자유도 극대화.', href: '/features/raw-capture' },
@@ -24,6 +25,11 @@ export default function Home() {
           <Image
             src="/colight_background.jpg"
             alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center z-0"
+          />
           <div className="hero-vignette" />
           <div className="absolute inset-0 z-[1] bg-black/50 pointer-events-none" />
           <div className="relative z-10 text-center px-6">
